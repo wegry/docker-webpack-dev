@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  webpack:
+    image: webpack
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./app:/src:rw
+      - node_modules:/src/node_modules
+
+volumes:
+  node_modules:
